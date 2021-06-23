@@ -29,3 +29,19 @@ export const Button = styled.button`
         background-color: deeppink;
     }
 `;
+
+export const ButtonSecond = styled.button`
+    width: 100%;
+    background-color: #fff;
+    color: purple;
+    padding: 14px 20px;
+    margin: 8px 0px;
+    border:1px solid purple;
+    border-radius: 4px;
+    cursor: pointer;
+
+    :hover{
+        background-color: purple;
+        color: #fff;
+    }
+`;
