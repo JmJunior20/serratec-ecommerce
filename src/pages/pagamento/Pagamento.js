@@ -32,12 +32,12 @@ const Pagamento = () => {
 
     return (
         <center>
-            {cliente.map(usuario => (
+            {cliente.map(cliente => (
                 <div>
                     <p> <strong>Id:</strong> {cliente.id}</p>
                     <p> <strong>Nome:</strong> {cliente.nome}</p>
                     <p> <strong>E-mail:</strong> {cliente.email}</p>
-                </div>
+                </div>                
             ))}
         </center>
     );

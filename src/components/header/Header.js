@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { NavBar } from "../../styles/header-styles";
 import { InputTextDois } from "../../styles/forms-styles";
-import { FiShoppingCart } from "react-icons/fi";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const Menu = () => {
 
@@ -16,8 +17,10 @@ const Menu = () => {
                 id="busca" placeholder="Pesquisar"
                 ></InputTextDois>
 
+           
             <a>
-                <Link to={'/carrinho'}><FiShoppingCart /></Link>
+                <Link to={'/login'}><AccountCircleIcon /></Link>
+                <Link to={'/carrinho'}><ShoppingCartIcon /></Link>
             </a>               
                   
         </NavBar>
