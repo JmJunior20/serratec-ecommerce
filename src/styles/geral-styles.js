@@ -26,3 +26,12 @@ export const DivPersonalizada3 = styled(DivPersonalizada)`
     gap: 5px;
     padding:0;
 `;
+
+export const Card = styled.div`
+    width:400px;
+    height:400px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom:2%; 
+`;
