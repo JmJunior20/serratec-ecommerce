@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DivPersonalizada } from "../../styles/geral-styles";
 import { InputText, Button, ButtonSecond } from "../../styles/forms-styles";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import apiUsuario from "../../services/usuario-api";
 import utilStorage from "../../utils/storage";
@@ -20,14 +20,19 @@ const Login = () => {
 
         apiUsuario.logar(username, senha)
         .then(resposta => {
-            console.log(resposta);
-            // const { token }  = resposta.data;
-            // utilStorage.salvarTokenNaStorage(token);
-            // window.open("/carrinho");
+            const { Authorization }  = resposta.data;
+            utilStorage.salvarTokenNaStorage(Authorization);
+            window.open("/carrinho", "_self");
         })
         .catch(erro => {
             console.log(erro);
         })
+    }
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push("/cadastro");
     }
 
     return (
@@ -54,7 +59,7 @@ const Login = () => {
             <p>Ao continuar, você concorda com as Condições de Uso da Amazon. Por favor verifique a Notificação de Privacidade, Notificações de Cookies e a Notificação de Anúncios Baseados em Interesse.</p>
             <p><Link to={'#'}>Esqueci minha senha</Link></p>
 
-            <ButtonSecond>Criar sua conta gratis</ButtonSecond>
+            <ButtonSecond onClick={handleClick} type="button">Criar sua conta gratis</ButtonSecond>
 
         </DivPersonalizada>
     );

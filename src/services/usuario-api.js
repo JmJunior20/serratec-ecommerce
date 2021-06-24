@@ -10,6 +10,15 @@ function logar(username, senha) {
 
 }
 
+function obterTodos(){
+    return new Promise((resolve, reject) => {
+        return api.get('/cliente')
+        .then(response => resolve(response))
+        .catch(error => reject(error))
+    });
+}
+
 export default {
-    logar
+    logar,
+    obterTodos
 }

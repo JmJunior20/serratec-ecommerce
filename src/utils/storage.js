@@ -1,13 +1,13 @@
-function salvarTokenNaStorage( token ){
-    localStorage.setItem('token', token)
+function salvarTokenNaStorage( Authorization ){
+    localStorage.setItem('Authorization', Authorization)
 }
 
 function obterTokenNaStorage(){
-    return localStorage.getItem('token');
+    return localStorage.getItem('Authorization');
 }
 
 function removerAutenticacao(){
-    localStorage.removeItem('token');
+    localStorage.removeItem('Authorization');
 }
 
 export default {
