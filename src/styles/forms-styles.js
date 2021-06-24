@@ -11,6 +11,17 @@ export const InputText = styled.input`
     box-sizing: border-box;
 `;
 
+export const InputTextDois = styled.input`
+    width: 350px;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+`;
+
 export const Select = styled(InputText)`
 
 `;
