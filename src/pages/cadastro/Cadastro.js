@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DivPersonalizada, DivPersonalizada2, DivPersonalizada3 } from '../../styles/geral-styles';
 import { InputText, Button, ButtonSecond } from '../../styles/forms-styles';
 import Container from '@material-ui/core/Container';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+import apiUsuario from "../../services/usuario-api";
+import utilStorage from "../../utils/storage";
 
 const Cadastro = () => {
+
+    const[email, setEmail] = useState("");
+    const[username, setUsername] = useState("");
+    const[senha, setSenha] = useState("");
+    const[cep, setCep] = useState("");
+    const[logradouro, setLogradouro] = useState("");
+    const[numero, setNumero] = useState("");
+
+    const efetuarCadastro = () => {
+        
+        if(!username || !senha || !email){
+            alert("Favor preencher todos os dados!")
+            return;
+        }
+
+        apiUsuario.cadastrar(email, username, senha)
+        .then(resposta => {
+            // const { Authorization }  = resposta.data;
+            // utilStorage.salvarTokenNaStorage(Authorization);
+            window.open("/login", "_self");
+        })
+        .catch(erro => {
+            console.log(erro);
+        })
+    }
+
 
     const history = useHistory();
 
@@ -18,7 +47,8 @@ const Cadastro = () => {
                 <label htmlFor="email">Email</label>
                 <InputText 
                     id="email"
-                    placeholder="exemplo@exemplo.com"
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)}
                 ></InputText>
 
 
@@ -28,39 +58,60 @@ const Cadastro = () => {
                         <InputText
                             id="senha"
                             type="password"
-                            placeholder="123456"
+                            value={senha} 
+                            onChange={e => setSenha(e.target.value)}
                         ></InputText>
                     </div>
 
                     <div>
-                        <label>UserName</label>
-                        <InputText></InputText>
+                        <label>Username</label>
+                        <InputText
+                            id="username"
+                            value={username} 
+                            onChange={e => setUsername(e.target.value)}
+                        ></InputText>
                     </div>
 
                 </DivPersonalizada2>
                 <DivPersonalizada2>
                     <div>
                         <label>CEP</label>
-                        <InputText></InputText>
+                        <InputText
+                            id="cep"
+                            value={cep} 
+                            onChange={e => setCep(e.target.value)}
+                        ></InputText>
                     </div>
                     <div>
-                        <label>Logradoro</label>
-                        <InputText></InputText>
+                        <label>Logradouro</label>
+                        <InputText
+                            id="logradouro"
+                            value={logradouro} 
+                            onChange={e => setLogradouro(e.target.value)}
+                        ></InputText>
                     </div>
                 </DivPersonalizada2>
 
                 <DivPersonalizada3>
                     <div>
                         <label>Número</label>
-                        <InputText></InputText>
+                        <InputText
+                            id="numero"
+                            value={numero} 
+                            onChange={e => setNumero(e.target.value)}
+                        ></InputText>
                     </div>
                     <div>
                         <label>Bairro</label>
-                        <InputText></InputText>
+                        <InputText
+                            id="bairro"
+                        ></InputText>
                     </div>
                     <div>
                         <label>Cidade</label>
-                        <InputText></InputText>
+                        <InputText
+                            id="cidade"
+                        ></InputText>
                     </div>
 
                 </DivPersonalizada3>
@@ -68,9 +119,11 @@ const Cadastro = () => {
   
 
                     <label>Referência</label>
-                    <InputText></InputText>
+                    <InputText
+                        id="ref"
+                    ></InputText>
 
-                    <Button>Cadastrar</Button>
+                    <Button onClick={efetuarCadastro}>Cadastrar</Button>
                     <ButtonSecond onClick={handleClick} type="button">Voltar</ButtonSecond>
 
             </DivPersonalizada>
