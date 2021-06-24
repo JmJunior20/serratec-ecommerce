@@ -13,11 +13,11 @@ const Menu = () => {
             </a>
                 
                 <InputTextDois 
-                id="email" placeholder="Pesquisar"
+                id="busca" placeholder="Pesquisar"
                 ></InputTextDois>
 
             <a>
-                <Link to={'/carrinho'}><FiShoppingCart /> Carrinho</Link>
+                <Link to={'/carrinho'}><FiShoppingCart /></Link>
             </a>               
                   
         </NavBar>

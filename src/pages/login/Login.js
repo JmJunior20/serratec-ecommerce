@@ -8,21 +8,22 @@ import utilStorage from "../../utils/storage";
 
 const Login = () => {
 
-    const[email, setEmail] = useState("");
+    const[username, setUsername] = useState("");
     const[senha, setSenha] = useState("");
 
     const efetuarLogin = () => {
         
-        if(!email || !senha){
-            alert("Favor informar email e senha!")
+        if(!username || !senha){
+            alert("Favor informar username e senha!")
             return;
         }
 
-        apiUsuario.logar(email, senha)
+        apiUsuario.logar(username, senha)
         .then(resposta => {
-            const { token }  = resposta.data;
-            utilStorage.salvarTokenNaStorage(token);
-            window.open("/carrinho");
+            console.log(resposta);
+            // const { token }  = resposta.data;
+            // utilStorage.salvarTokenNaStorage(token);
+            // window.open("/carrinho");
         })
         .catch(erro => {
             console.log(erro);
@@ -31,11 +32,11 @@ const Login = () => {
 
     return (
         <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="20px">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Login</label>
             <InputText 
-                id="email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
+                id="username" 
+                value={username} 
+                onChange={e => setUsername(e.target.value)} 
                 placeholder="exemplo@exemplo.com"
             ></InputText>
 
@@ -53,7 +54,7 @@ const Login = () => {
             <p>Ao continuar, você concorda com as Condições de Uso da Amazon. Por favor verifique a Notificação de Privacidade, Notificações de Cookies e a Notificação de Anúncios Baseados em Interesse.</p>
             <p><Link to={'#'}>Esqueci minha senha</Link></p>
 
-            <ButtonSecond onClick={"/cadastro"}>Criar sua conta gratis</ButtonSecond>
+            <ButtonSecond>Criar sua conta gratis</ButtonSecond>
 
         </DivPersonalizada>
     );
