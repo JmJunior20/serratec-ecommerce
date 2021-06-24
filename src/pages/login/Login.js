@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     return (
-        <DivPersonalizada width="400px" border="1px solid #ddd" margin="auto" marginTop="50px">
+        <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="20px">
             <label htmlFor="email">Email</label>
             <InputText 
                 id="email" 

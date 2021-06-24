@@ -10,12 +10,18 @@ export const NavBar = styled.ul`
     display: flex;
     justify-content: space-around;
     padding-top: 10px;
+    align-items: center;
 
 
     a {
         color: #fff;
         padding: 15px 17px;
         text-decoration: none;
-        text-align:center;
+    }
+
+    img {
+        border-radius: 4px;
+        width:80px;
+        height: 50px;
     }   
 `;

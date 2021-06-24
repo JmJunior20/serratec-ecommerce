@@ -13,6 +13,7 @@ export const InputText = styled.input`
 
 export const InputTextDois = styled.input`
     width: 350px;
+    height: 40px;
     padding: 12px 20px;
     margin: 8px 0px;
     display: inline-block;
