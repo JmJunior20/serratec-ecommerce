@@ -16,9 +16,9 @@ function obterProdutosPorCategoria(idCategoria) {
     });
 }
 
-function obterPorId(){
+function obterPorId(id){
     return new Promise((resolve, reject) => {
-        return api.get('/produto')
+        return api.get(`/produto/${id}`)
         .then(response => resolve(response))
         .catch(error => reject(error))
     });

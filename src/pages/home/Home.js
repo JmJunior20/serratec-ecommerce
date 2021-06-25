@@ -28,17 +28,17 @@ const Home = () => {
         obterProdutos();
     });
 
-    const history = useHistory();
+    // const history = useHistory();
 
-    const handleClick = () => {
-        history.push('/produto');
-    }
+    // const handleClick = () => {
+    //     history.push('/produto');
+    // }
    
 
     return (
         <div id="cardsContainer">
             {produto.map(produto => (
-                <Card titulo="Numeros">
+                <Card titulo="Numeros" key={produto.id}>
                     <main>
                         <h3>{produto.id}</h3>
                         <Image>

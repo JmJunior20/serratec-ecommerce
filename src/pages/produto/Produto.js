@@ -1,52 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
 import { DivPersonalizada4 } from '../../styles/geral-styles';
 import Composicao from "../composicao/Composicao";
 
 
-import apiUsuarios from "../../services/produtos-api";
+//import apiProduto from "../../services/produtos-api";
+//import './index.css';
+import api from "../../services/api";
+import Produto from "../../components/models/Produto";
 
-const Produto = () => {
+export default class Detalhes extends React.Component{
+    state = {
+        produto: {}
+    }
+    async componentDidMount (){
+        const {id}=this.props.match.params;
+        const resposta = await api.get(`/produto/${id}`);
+        this.setState({produto:new Produto (resposta.data)});
+    }
 
-    const [produto, setProduto] = useState([]);
-
-    // const obterProdutos = () => {
-    //     apiUsuarios.obterPorId(produto.id)
-    //     .then(resposta =>{
-    //         // Eu poderia varrer o data e para cada item que veio na requisição
-    //         // montar um novo array de new Usuario e depois salvar no state.
-    //         setProduto(resposta.data);
-    //     })
-    //     .catch(erro =>{
-    //         console.log(erro);
-    //     })
-    // }
-
-    // useEffect(() =>{        
-
-    //     obterProdutos();
-    // });
-    
-
-    return (
-        <DivPersonalizada4 
-            // width="100%" 
-            // height="100%"
-            // margin="auto" 
-            marginTop="50px"
-        >
-            {produto.map(produto => (
-                <div>
-                    <div>
-                        <h1>Imagem</h1>                
-                    </div>
-                    <div>
-                        <h3>{produto.nome}</h3>
-                    </div>
-                    <Composicao></Composicao>
-                </div>
-            ))}
-        </DivPersonalizada4>
-    );
+    render(){
+        const {produto}=this.state;
+        return(
+             <div className="detalhes-produtos" >
+                     <div className="produtos" key={produto.id}>
+                        <DivPersonalizada4 
+                            // width="100%" 
+                            // height="100%"
+                            // margin="auto" 
+                            marginTop="50px"
+                        >
+                            <div>
+                                <h1>Imagem</h1>                
+                            </div>
+                            <div>
+                                <h3>{produto.nome}</h3>
+                            </div>
+                            <Composicao></Composicao>
+                        </DivPersonalizada4>
+                     </div>  
+            </div>   
+        );
+    };
 }
-
-export default Produto;

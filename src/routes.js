@@ -16,7 +16,7 @@ const Routes = () => (
         <Menu></Menu>
         <Switch>
             <Route exact path={'/'} component={Home}></Route>
-            <Route path={'/produto'} component={Produto}></Route>
+            <Route path={'/produto/:id'} component={Produto}></Route>
             <Route path={'/login'} component={Login}></Route>
             <Route path={'/cadastro'} component={Cadastro}></Route>
             <Route path={'/carrinho'} component={Carrinho}></Route>
