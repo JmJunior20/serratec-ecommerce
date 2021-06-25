@@ -6,7 +6,7 @@ const Menu = () => {
 
     return (
         <NavBar>
-            <li>
+            {/* <li>
                 <Link to={'/'}>Home</Link>
             </li>
             <li>
@@ -23,7 +23,7 @@ const Menu = () => {
             </li>
             <li>
                 <Link to={'/pagamento'}>Pagamento</Link>
-            </li>              
+            </li>               */}
         </NavBar>
     );
 }

@@ -10,7 +10,7 @@ const Menu = () => {
     return (
         <NavBar>
             <a>
-                <Link to={'/'}><img src="https://i.pinimg.com/564x/f7/63/03/f7630358b6c2e058381a34be8d2736d8.jpg"></img></Link>
+                <Link to={'/'}><h1 color="red">SerraBook</h1></Link>
             </a>
                 
                 <InputTextDois 

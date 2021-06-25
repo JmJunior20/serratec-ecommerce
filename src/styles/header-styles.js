@@ -9,9 +9,7 @@ export const NavBar = styled.ul`
     text-align: center;
     display: flex;
     justify-content: space-around;
-    padding-top: 10px;
     align-items: center;
-
 
     a {
         color: #fff;

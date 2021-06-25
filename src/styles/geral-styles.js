@@ -28,11 +28,13 @@ export const DivPersonalizada3 = styled(DivPersonalizada)`
 `;
 
 export const Card = styled.div`
-    width:300px;
-    height:380px;
+    width: 250px;
+    height: 320px;
     border: 2px solid #ccc;
     border-radius: 2px;
-    box-shadow: 0 4px 4px -2px #ddd;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+	-moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+	box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     text-align: center;
     font-size: 15px;
     margin-bottom:2%; 
