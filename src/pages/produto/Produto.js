@@ -36,7 +36,9 @@ export default class Detalhes extends React.Component{
                             </Image>              
                             </div>
                             <div id="descricao">
+                                <h1>{produto.nome}</h1>
                                 <h3>{produto.descricao}</h3>
+                                <h3>Preço R$ {produto.preco}</h3>
                             </div>
                             <Composicao></Composicao>
                         </DivPersonalizada4>
