@@ -31,6 +31,7 @@ const Home = () => {
                 
                 <Card titulo="Numeros" key={produto.id}>                    
                     <main>
+                        <br></br>
                         <Link to={`/produto/${produto.id}`}>
                             <Image>
                                 <img src={produto.url} />
