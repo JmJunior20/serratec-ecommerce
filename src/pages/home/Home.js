@@ -1,25 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import Card from "../../components/cards/CardHome";
-import "../../styles/styles.css"
-import Button from '@material-ui/core/Button';
+import "../../styles/styles.css";
+import Image from "./Image";
+//import Button from '@material-ui/core/Button';
+import { Link, useHistory } from 'react-router-dom';
+
+import apiUsuarios from "../../services/produtos-api";
 
 const Home = () => {
-    let numeros = ["Tênis", "Casaco", "Blusão", "Sapato", "Sobretudo", "Topper", "Body", "Colã", "Moletom"];
+
+    const [produto, setProduto] = useState([]);
+
+    const obterProdutos = () => {
+        apiUsuarios.obterTodos()
+        .then(resposta =>{
+            // Eu poderia varrer o data e para cada item que veio na requisição
+            // montar um novo array de new Usuario e depois salvar no state.
+            setProduto(resposta.data);
+        })
+        .catch(erro =>{
+            console.log(erro);
+        })
+    }
+
+    useEffect(() =>{        
+
+        obterProdutos();
+    });
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/produto');
+    }
+   
 
     return (
         <div id="cardsContainer">
-            {numeros.map(numero => (
+            {produto.map(produto => (
                 <Card titulo="Numeros">
                     <main>
-                        <h1>{numero}</h1>
-                        <br></br><br></br>
-                        <br></br><br></br>
-                        <br></br><br></br>
-                        <br></br><br></br>
-                        <br></br><br></br>
-                        <h3>{"Um lindo " +numero}</h3>
-                        <br></br><br></br>
-                        <Button variant="contained" color="primary">Comprar</Button>
+                        <h3>{produto.id}</h3>
+                        <Image>
+                            <img src={produto.url} />
+                        </Image>
+                        <h3>{produto.nome}</h3>
+                        {/* <Button onClick={handleClick} variant="contained" color="primary">Comprar</Button> */}
+                        <Link to={`/produto/${produto.id}`}>
+                            <h2>{produto.nome}</h2>
+                        </Link>
                     </main>
                 </Card>
             ))}

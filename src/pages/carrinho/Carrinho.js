@@ -32,7 +32,7 @@ const Carrinho = () => {
 
     return (
         <center>
-            {cliente.map(usuario => (
+            {cliente.map(cliente => (
                 <div>
                     <p> <strong>Id:</strong> {cliente.id}</p>
                     <p> <strong>Nome:</strong> {cliente.nome}</p>

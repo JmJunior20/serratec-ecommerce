@@ -28,10 +28,42 @@ export const DivPersonalizada3 = styled(DivPersonalizada)`
 `;
 
 export const Card = styled.div`
-    width:400px;
-    height:400px;
-    border: 2px solid black;
+    width:300px;
+    height:380px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 4px 4px -2px #ddd;
     text-align: center;
     font-size: 15px;
     margin-bottom:2%; 
+`;
+
+export const DivPersonalizada4 = styled(DivPersonalizada)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+`;
+
+export const Card3= styled(Card)`
+    width: auto;
+    height:150px ;
+    padding:1%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+
+`;
+
+export const Card4= styled(Card)`
+    width: auto;
+    height: auto;
+    padding:1%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
 `;
