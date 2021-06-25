@@ -10,7 +10,7 @@ export const DivPersonalizada = styled.div`
     border: ${props => props.border};
     padding: 25px; 
     margin: ${props => props.margin};
-    margin-top: ${props => props.marginTop}
+    margin-top: ${props => props.marginTop};
 `;
 
 export const DivPersonalizada2 = styled(DivPersonalizada)`
@@ -45,9 +45,9 @@ export const DivPersonalizada4 = styled(DivPersonalizada)`
     
 `;
 
-export const Card3= styled(Card)`
+export const Card3 = styled(Card)`
     width: auto;
-    height:150px ;
+    height: 150px;
     padding:1%;
     margin-bottom: 0;
     display: flex;
@@ -56,14 +56,27 @@ export const Card3= styled(Card)`
 
 `;
 
-export const Card4= styled(Card)`
+export const Card4 = styled(Card)`
     width: auto;
-    height: auto;
+    height: 280px;
     padding:1%;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    
+    justify-content: space-around; 
 
+`;
+
+export const DivPersonalizada5 = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    align-items: center;
+`;
+
+export const DivPersonalizada6 = styled.div`
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 5px;
+    align-items: center;
 `;

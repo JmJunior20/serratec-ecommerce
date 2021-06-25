@@ -1,6 +1,7 @@
 import React from 'react';
 import { DivPersonalizada4 } from '../../styles/geral-styles';
 import Composicao from "../composicao/Composicao";
+import Image from "./Image";
 
 
 //import apiProduto from "../../services/produtos-api";
@@ -30,10 +31,12 @@ export default class Detalhes extends React.Component{
                             marginTop="50px"
                         >
                             <div>
-                                <h1>Imagem</h1>                
+                            <Image>
+                            <   img src={produto.url} />
+                            </Image>              
                             </div>
                             <div>
-                                <h3>{produto.nome}</h3>
+                                <h3>{produto.descricao}</h3>
                             </div>
                             <Composicao></Composicao>
                         </DivPersonalizada4>
