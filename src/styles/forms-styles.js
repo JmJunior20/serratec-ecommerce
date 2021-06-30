@@ -7,7 +7,7 @@ export const InputText = styled.input`
     display: inline-block;
     border: 1px solid #ddd;
     outline: none;
-    border-radius: 4px;
+    border-radius: 14px;
     box-sizing: border-box;
 `;
 
@@ -34,7 +34,7 @@ export const Button = styled.button`
     padding: 14px 20px;
     margin: 8px 0px;
     border: none;
-    border-radius: 4px;
+    border-radius: 14px;
     cursor: pointer;
 
     :hover{
@@ -49,7 +49,7 @@ export const ButtonSecond = styled.button`
     padding: 14px 20px;
     margin: 8px 0px;
     border:1px solid purple;
-    border-radius: 4px;
+    border-radius: 14px;
     cursor: pointer;
 
     :hover{

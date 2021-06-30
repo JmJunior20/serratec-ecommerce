@@ -11,7 +11,7 @@ const Pagamento = () => {
             <h1>Pagamento</h1>
         
             <center>
-                <h2>Parabéns</h2>
+                <h2>Aqui faríamos o pagamento</h2>
                 {/* <Image>
                     <img src="../../utils/image/image_grupo6.jpeg"></img>
                     <img src='../../utils/image/image_grupo6.jpeg' />

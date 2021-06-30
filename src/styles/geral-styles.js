@@ -11,6 +11,7 @@ export const DivPersonalizada = styled.div`
     padding: 25px; 
     margin: ${props => props.margin};
     margin-top: ${props => props.marginTop};
+    
 `;
 
 export const DivPersonalizada2 = styled(DivPersonalizada)`
@@ -54,7 +55,8 @@ export const Card3 = styled(Card)`
     margin-bottom: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;    
+    justify-content: space-around;
+        
 
 `;
 
