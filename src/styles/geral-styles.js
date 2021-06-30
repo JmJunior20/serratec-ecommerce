@@ -8,6 +8,7 @@ import styled from "styled-components";
 export const DivPersonalizada = styled.div`
     width: ${props => props.width};
     border: ${props => props.border};
+    border-radius: 24px;
     padding: 25px; 
     margin: ${props => props.margin};
     margin-top: ${props => props.marginTop};

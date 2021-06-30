@@ -36,7 +36,7 @@ const Login = () => {
     }
 
     return (
-        <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="20px">
+        <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="30px">
             <label htmlFor="username">Login</label>
             <InputText 
                 id="username" 

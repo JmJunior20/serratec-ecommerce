@@ -43,7 +43,7 @@ const Cadastro = () => {
 
     return (
         <Container>
-            <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="20px" >
+            <DivPersonalizada width="350px" border="1px solid #ddd" margin="auto" marginTop="30px" >
                 <label htmlFor="email">Email</label>
                 <InputText 
                     id="email"
